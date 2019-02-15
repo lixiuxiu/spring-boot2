@@ -1,0 +1,9 @@
+```
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/lixiuxiu/Desktop/SpringBoot_Project-master/target/classes/me/freelee/mybatisdruid/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/lixiuxiu/Desktop/SpringBoot_Project-master/target/classes/mapper/UserMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/lixiuxiu/Desktop/SpringBoot_Project-master/target/classes/mapper/UserMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for me.freelee.mybatisdruid.mapper.UserMapper.BaseResultMap
+```
+
+最后一个cause是：
+
+Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for me.freelee.mybatisdruid.mapper.UserMapper.BaseResultMap
+
+因为mapper是generator代码自动生成的，我点了两次，xml文件里有重复代码。所以报这个错误
