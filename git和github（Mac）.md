@@ -265,11 +265,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
   
 
-###  (三)新增文件上传到github上
+###  (三)新增或修改文件上传到github上
 
-经过（二）操作后的本地文件夹新增加了一个文件，进行如下操作将新增文件上传到github上.
+经过（二）操作后的本地文件夹新增加或者修改了一个文件，进行如下操作将新增或修改文件上传到github上.
 
-注：已经经过init和remote add后的不同本地目录下都是如下操作，不需要再次init和remote add就会把新增的文件push到对应的仓库中
+注：已经经过init和remote add后的不同本地目录下都是如下操作，不需要再次init和remote add就会把更改的文件push到对应的仓库中
 
 ```
 git add  <filename.后缀>
