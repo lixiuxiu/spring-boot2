@@ -144,10 +144,6 @@ Warning: Permanently added the RSA host key for IP address '192.30.253.112' to t
 Hi lixiuxiu! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-
-
-## （二） 本地文件上传到github上
-
 在使用Git提交前，必须配置用户名和邮箱，这些信息会永久保存到历史记录中。
 
 ```
@@ -155,7 +151,13 @@ lixiuxiudeMacBook-Pro:fabric lixiuxiu$ git config --global user.name "lixiuxiu"
 lixiuxiudeMacBook-Pro:fabric lixiuxiu$ git config --global user.email 1659518714@qq.com
 ```
 
-然后切换到本地需要上传的项目目录里，只需如下几行命令，就可以上传代码到 github 上
+
+
+## （二） 本地文件上传到github上
+
+切换到本地需要上传的项目目录里，只需如下几行命令，就可以上传代码到 github 上
+
+如果有两个本地目录需上传到github的两个仓库中，以下过程需执行两次
 
 ```
 git init
@@ -262,3 +264,35 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
   ```
 
   
+
+###  (三)新增文件上传到github上
+
+经过（二）操作后的本地文件夹新增加了一个文件，进行如下操作将新增文件上传到github上.
+
+注：已经经过init和remote add后的不同本地目录下都是如下操作，不需要再次init和remote add就会把新增的文件push到对应的仓库中
+
+```
+git add  <filename.后缀>
+git commit -m "xx"
+git push origin master
+```
+
+如
+
+```
+lixiuxiudeMacBook-Pro:java web lixiuxiu$ git add git和github（Mac）.md
+lixiuxiudeMacBook-Pro:java web lixiuxiu$ git commit -m "git and github"
+[master 9263374] git and github
+ 1 file changed, 264 insertions(+)
+ create mode 100644 "git\345\222\214github\357\274\210Mac\357\274\211.md"
+lixiuxiudeMacBook-Pro:java web lixiuxiu$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 4.15 KiB | 4.15 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lixiuxiu/spring-boot2.git
+   4d15abd..9263374  master -> master
+```
+
