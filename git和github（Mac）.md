@@ -226,7 +226,12 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-可以看到有报错，是因为：本地没有update到最新版本的项目（git上有README.md文件没下载下来），git pull origin master 没有成功，可以通过如下命令进行代码合并【注：pull=fetch+merge] ：git pull --rebase origin master成功了
+可以看到有报错，是因为：本地没有update到最新版本的项目（git上有README.md文件没下载下来），git pull origin master 没有成功，可以通过如下命令进行代码合并【注：pull=fetch+merge] ：
+git pull --rebase origin master成功了
+
+或者强行push上去，覆盖远程仓库
+
+git push origin master --force
 
 然后使用 git push -u origin master，查看github，我们可以看到文件已经成功上传到github上了。 
 
