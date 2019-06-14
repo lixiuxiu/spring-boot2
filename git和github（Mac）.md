@@ -235,20 +235,7 @@ git push origin master --force
 
 然后使用 git push -u origin master，查看github，我们可以看到文件已经成功上传到github上了。 
 
- * ```
-  lixiuxiudeMacBook-Pro:fabric lixiuxiu$ git pull origin master
-  warning: no common commits
-  remote: Enumerating objects: 6, done.
-  remote: Counting objects: 100% (6/6), done.
-  remote: Compressing objects: 100% (4/4), done.
-  remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
-  Unpacking objects: 100% (6/6), done.
-  From https://github.com/lixiuxiu/blockchain
-  
-  - branch            master     -> FETCH_HEAD
-  - [new branch]      master     -> origin/master
-    fatal: refusing to merge unrelated histories
-  ```
+
 
  * ```
   lixiuxiudeMacBook-Pro:fabric lixiuxiu$ git pull --rebase origin master
